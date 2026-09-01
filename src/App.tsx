@@ -53,7 +53,7 @@ function App() {
   }, [darkMode]);
 
   useEffect(() => {
-    fetch("/biography.md")
+    fetch(`${import.meta.env.BASE_URL}biography.md`)
       .then((response) => response.text())
       .then((text) => setBiography(text))
       .catch((error) => {
@@ -167,7 +167,7 @@ function App() {
                 sx={{ alignItems: "center", justifyContent: "center" }}
               >
                 <Avatar
-                  src="/images/Professional_headshot.jpg"
+                  src={`${import.meta.env.BASE_URL}images/Professional_headshot.jpg`}
                   alt="Ashanth Ganesh"
                   sx={(theme) => ({
                     width: { xs: 150, sm: 190 },
